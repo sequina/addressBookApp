@@ -1,0 +1,23 @@
+{
+  "name": "lib",
+  "description": "description",
+  "main": "Gulpfile.js",
+  "authors": [
+    "sequina <sccaro89@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/sequina/addressBookApp",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-route": "^1.5.5",
+    "jquery": "^2.2.4",
+    "bootstrap": "^3.3.6"
+  }
+}
