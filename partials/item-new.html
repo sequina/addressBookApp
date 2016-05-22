@@ -1,0 +1,23 @@
+<h1>New Todo</h1>
+  <form>
+    <div class="form-group">
+      <label>First Name</label>
+      <input type="text" class="form-control" placeholder="F.Name" ng-model="newContact.firstName"/>
+    </div>
+
+    <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" class="form-control" placeholder="L.Name" ng-model="newConact.lastName"/>
+    </div>
+
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input type="text" class="form-control" placeholder="456-123-6590" ng-model="newContact.number"/>
+    </div>
+
+    <div class="form-group">
+      <label>Addresss</label>
+      <input type="text" class="form-control" placeholder="home address" ng-model="newContact.address"/>
+    </div>
+      <button class="btn btn-default" ng-click="addNewContact()">Save</button>
+  </form>
