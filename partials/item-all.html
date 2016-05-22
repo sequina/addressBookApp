@@ -10,14 +10,14 @@
     </div>
   </div>
 
-  <div ng-repeat="contacts in item | filter: searchText">
+  <div ng-repeat="thing in items | filter: searchText">
     <div class="panel panel-default">
       <div class="panel-body">
-        <div class="col-xs-1"><input type="checkbox" name=""/></div>
-        <div class="col-xs-7">{{contacts.firstName}}</div>
-        <div class="col-xs-2">{{contacts.lastName}}</div>
-        <div class="col-xs-1">{{contacts.number}}</div>
-        <div class="col-xs-1">{{contacts.address}}</div>
+        <div class="col-xs-3"><input type="checkbox" name=""/></div>
+        <div class="col-xs-2">{{thing.firstName}}</div>
+        <div class="col-xs-2">{{thing.lastName}}</div>
+        <div class="col-xs-2">{{thing.number}}</div>
+        <div class="col-xs-2">{{thing.address}}</div>
         <div class="col-xs-1"><button class="btn btn-danger">X</button></div>
       </div>
     </div>

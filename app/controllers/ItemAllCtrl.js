@@ -2,25 +2,28 @@ app.controller("ItemAllCtrl", function ($scope) {
   $scope.items = [
 {
       id: 0,
-      firstname: "sequina",
+      firstName: "sequina",
       lastName: "caro",
       number: "123-456-7890",
-      address: "123 grand street"
+      address: "123 grand street",
+      isAdded: true
 
     },
     {
        id: 1,
-      firstname: "brad",
+      firstName: "brad",
       lastName: "wilter",
-      numer: "345-654-2059",
-      address: "360 foster ave."
+      number: "345-654-2059",
+      address: "360 foster ave.",
+      isAdded: true
     },
     {
        id: 2,
-      firstname: "tina",
+      firstName: "tina",
       lastName: "rillo",
       number: "805-789-2345",
-      address: "503 sapphire dr."
+      address: "503 sapphire dr.",
+      isAdded: true
     }
   ];
 });
