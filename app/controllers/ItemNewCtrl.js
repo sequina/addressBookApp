@@ -27,5 +27,5 @@ app.controller("ItemNewCtrl", function ($scope) {
   $scope.addnewContact = function() {
     console.log("added new contact");
 
-  }
-})
+  };
+});

@@ -13,4 +13,4 @@ app.controller("NavCtrl", function ($scope) {
       url:'#/items/new'
     }
   ];
-})
+});
