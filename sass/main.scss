@@ -1,9 +1,17 @@
-$blue: pink;
+$color: #66ffff;
+$funFont: Playfair Display;
+$fontSize: 12%;
 
 body{
-  background-color: $blue;
+  background-color: $color;
 }
 
 h1{
   text-align: center;
 }
+
+.panel-body{
+  text-align: center;
+  font-style: $funFont;
+}
+

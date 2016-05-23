@@ -1,5 +1,9 @@
 body {
-  background-color: pink; }
+  background-color: #66ffff; }
 
 h1 {
   text-align: center; }
+
+.panel-body {
+  text-align: center;
+  font-style: Playfair Display; }

@@ -3,7 +3,7 @@
     <div class= "col-xs-6 col-xs-offset-3">
       <div class="input-group">
       <span class="input-group-btn">
-        <button class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
+        <button class="btn btn-default" type="button">Go!</button>
       </span>
         <input type="text" class="form-control"placeholder="Search Name" ng-model="searchText"/>
       </div>
@@ -11,14 +11,14 @@
   </div>
 
   <div ng-repeat="contacts in items | filter: searchText">
+  <br/>
     <div class="panel panel-default">
       <div class="panel-body">
-        <div class="col-xs-2"><input type="checkbox" name=""/></div>
-        <div class="col-xs-3">{{contacts.firstName}}</div>
-        <div class="col-xs-3">{{contacts.lastName}}</div>
-        <div class="col-xs-1">{{contacts.number}}</div>
-        <div class="col-xs-1">{{contacts.address}}</div>
-        <div class="col-xs-1"><button class="btn btn-danger">X</button></div>
+        <div class="col-xs-3">  First Name: {{contacts.firstName}}</div>
+        <div class="col-xs-3">Last Name: {{contacts.lastName}}</div>
+        <div class="col-xs-3">Telephone: {{contacts.number}}</div>
+        <div class="col-xs-3">Address: {{contacts.address}}</div>
+        <!-- <div class="col-xs-1"><button class="btn btn-danger">X</button></div> -->
       </div>
     </div>
   </div>
