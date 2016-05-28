@@ -1,4 +1,4 @@
-<h1>New Todo</h1>
+<h1>{{title}}</h1>
   <form>
     <div class="form-group">
       <label>First Name</label>
@@ -19,5 +19,5 @@
       <label>Addresss</label>
       <input type="text" class="form-control" placeholder="home address" ng-model="newContact.address"/>
     </div>
-      <button class="btn btn-default btn-lg active" ng-click="addNewContact()">Save</button>
+      <button class="btn btn-default btn-lg active" ng-click="addNewContact()">{{saveButtonText}}</button>
   </form>

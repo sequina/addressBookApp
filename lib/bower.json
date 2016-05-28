@@ -18,6 +18,8 @@
     "angular": "^1.5.5",
     "angular-route": "^1.5.5",
     "jquery": "^2.2.4",
-    "bootstrap": "^3.3.6"
+    "bootstrap": "^3.3.6",
+    "firebase": "^3.0.3",
+    "angularfire": "^1.2.0"
   }
 }
