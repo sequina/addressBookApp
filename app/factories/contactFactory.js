@@ -1,9 +1,10 @@
 app.factory("itemStorage", function($q, $http, firebaseURL){
 
   var getContactList = function(){
-  var contacts = [];
+    var contacts = [];
+    let user = authFactory.getUser();
     return $q(function(resolve, reject){
-      $http.get(firebaseURL + "contacts.json")
+      $http.get(`${firebaseURL}items.json?orderBy="uid"&equalTo= "${user.uid}"`)
         .success(function(itemObject){
           var itemCollection = itemObject;
           Object.keys(itemCollection).forEach(function(key){
@@ -18,7 +19,7 @@ app.factory("itemStorage", function($q, $http, firebaseURL){
     });
   };
 
-  var deleteItem = function(contactId){
+  var deleteItem = function(itemId){
     return $q(function(resolve, reject){
       $http
               .delete( firebaseURL + `items/${itemId}.json`)
@@ -47,9 +48,9 @@ app.factory("itemStorage", function($q, $http, firebaseURL){
         });
   };
 
-  var getSingleItem = function(contactId) {
+  var getSingleItem = function(itemId) {
     return $q(function(resolve, reject){
-      $http.get( firebaseURL + "items/"+contactId+".json")
+      $http.get( firebaseURL + "items/"+itemId+".json")
         .success(function(itemObject){
           resolve(itemObject);
         })
@@ -59,7 +60,7 @@ app.factory("itemStorage", function($q, $http, firebaseURL){
     });
 }
 
-   var updateItem = function(contactId, newContact){
+   var updateItem = function(itemId, newContact){
         return $q(function(resolve, reject) {
             $http.put(
                 firebaseURL + "items/" + itemId + ".json",

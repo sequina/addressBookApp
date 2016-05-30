@@ -7,8 +7,8 @@ var app = angular.module("addressBook",["ngRoute"])
   } else {
     console.log("User is not authenticated, reject route promise");
     reject();
-  }
-})
+  };
+});
 
 app.config(function ($routeProvider) {
   $routeProvider.
@@ -27,17 +27,17 @@ app.config(function ($routeProvider) {
     controller:"ItemNewCtrl",
     resolve: {isAuth}
   }).
-   when('/items/:contactId', {
+   when('/items/:itemId', {
     templateUrl: 'partials/item-all.html',
     controller:"ItemViewCtrl",
     resolve: {isAuth}
   }).
-  when('/items/:contactId/edit', {
+  when('/items/:itemId/edit', {
     templateUrl: 'partials/item-details.html',
     controller:"ItemEditCtrl",
     resolve: {isAuth}
   }).
-  when('/items/:contactId/edit', {
+  when('/items/:itemId/edit', {
     templateUrl: 'partials/item-new.html',
     controller:"ItemNewCtrl",
     resolve: {isAuth}
