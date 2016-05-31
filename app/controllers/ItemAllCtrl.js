@@ -1,15 +1,15 @@
-app.controller("ItemAllCtrl", function ($scope, $location, itemStorage) {
+app.controller("ItemAllCtrl", function ($scope, $location, contactStorage) {
   $scope.contacts = [];
-    itemStorage.getContactList().then(function(itemCollection) {
+    contactStorage.getContactList().then(function(itemCollection) {
       console.log("itemCollection from promise", itemCollection);
       $scope.contacts = itemCollection;
     });
 
-$scope.contactDelete = function(itemId){
-  console.log("itemId",itemId);
-  itemStorage.deleteItem(itemId).then(
+$scope.contactDelete = function(contactId){
+  console.log("contactId",contactId);
+  contactStorage.deleteItem(contactId).then(
     function(response) {
-      itemStorage.getContactList().then(
+      contactStorage.getContactList().then(
         function(itemCollection) {
           $scope.contacts = itemCollection;
         });
@@ -17,7 +17,7 @@ $scope.contactDelete = function(itemId){
 };
 
 $scope.inputChange = function(contact) {
-  itemStorage.updateCompletedStaus(contact)
+  contactStorage.updateCompletedStatus(contact)
   .then(function(response) {
     console.log("response", response);
     });

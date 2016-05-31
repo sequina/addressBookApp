@@ -27,17 +27,17 @@ app.config(function ($routeProvider) {
     controller:"ItemNewCtrl",
     resolve: {isAuth}
   }).
-   when('/items/:itemId', {
+   when('/items/:contactId', {
     templateUrl: 'partials/item-all.html',
     controller:"ItemViewCtrl",
     resolve: {isAuth}
   }).
-  when('/items/:itemId/edit', {
+  when('/items/:contactId/edit', {
     templateUrl: 'partials/item-details.html',
     controller:"ItemEditCtrl",
     resolve: {isAuth}
   }).
-  when('/items/:itemId/edit', {
+  when('/items/:contactId/edit', {
     templateUrl: 'partials/item-new.html',
     controller:"ItemNewCtrl",
     resolve: {isAuth}

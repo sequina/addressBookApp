@@ -1,9 +1,9 @@
-app.controller("ItemViewCtrl", function($scope, $routeParams, itemStorage) {
+app.controller("ItemViewCtrl", function($scope, $routeParams, contactStorage) {
   $scope.contacts = [];
   $scope.selectedItem = {};
-  console.log($routeParams.itemId);
+  console.log($routeParams.contactId);
 
-  itemStorage.getContactList().then(function (itemCollection) {
+  contactStorage.getContactList().then(function (itemCollection) {
     console.log("itemCollection from promise", itemCollection);
     $scope.contacts = itemCollection;
 
