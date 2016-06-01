@@ -13,7 +13,7 @@ var app = angular.module("addressBook",["ngRoute"])
 app.config(function ($routeProvider) {
   $routeProvider.
   when('/',{
-    templateUrl:'partials/item-all.html',
+    templateUrl:'partials/item-details.html',
     controller:"ItemAllCtrl",
     resolve: {isAuth}
   }).
@@ -29,7 +29,7 @@ app.config(function ($routeProvider) {
   }).
    when('/items/:contactId', {
     templateUrl: 'partials/item-all.html',
-    controller:"ItemViewCtrl",
+    controller:"ItemAllCtrl",
     resolve: {isAuth}
   }).
   when('/items/:contactId/edit', {
