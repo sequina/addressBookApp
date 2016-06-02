@@ -13,8 +13,8 @@ var app = angular.module("addressBook",["ngRoute"])
 app.config(function ($routeProvider) {
   $routeProvider.
   when('/',{
-    templateUrl:'partials/item-details.html',
-    controller:"ItemAllCtrl",
+    templateUrl:'partials/item-all.html',
+    controller:"ItemViewCtrl",
     resolve: {isAuth}
   }).
   when('/items/all',{
@@ -54,8 +54,8 @@ app.config(function ($routeProvider) {
 });
 
 app.run(($location) => {
-  let todoRef = new Firebase("https://addressproject.firebaseio.com/");
-  todoRef.onAuth(authData => {
+  let contactRef = new Firebase("https://addressproject.firebaseio.com/");
+  contactRef.onAuth(authData => {
     if(!authData){
       $location.path("/login");
     }
