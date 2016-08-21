@@ -1,4 +1,4 @@
-app.controller("ItemNewCtrl", function ($scope, $location, itemStorage) {
+app.controller("ItemNewCtrl", function ($scope, $location, contactStorage) {
   $scope.title = "New Contact";
   $scope.saveButtonText = "Add New Contact";
   $scope.newContact = {
@@ -8,11 +8,11 @@ app.controller("ItemNewCtrl", function ($scope, $location, itemStorage) {
     number: ""
   };
 
-  $scope.addnewContact = function() {
-    itemStorage.postNewContact($scope.newContact)
-    .then(function successCallback(response) {
-    console.log(response);
-    $location.url("/items/all");
+  $scope.addNewContact = function() {
+      contactStorage.postNewContact($scope.newContact)
+        .then(function successCallback(response) {
+          console.log(response);
+          $location.url("/items/all");
       });
     };
 });
