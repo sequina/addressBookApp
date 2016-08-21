@@ -1,0 +1,34 @@
+<h1>Contacts</h1>
+  <div class="row">
+    <div class= "col-xs-6 col-xs-offset-3">
+      <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+        <input type="text" class="form-control"placeholder="Search Name" ng-model="searchText"/>
+      </div>
+    </div>
+  </div>
+<!-- task bar -->
+  <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-7">First Name</div>
+        <div class="col-xs-2">Last Name</div>
+        <div class="col-xs-1">Address</div>
+        <div class="col-xs-1">Number</div>
+      </div>
+  </div>
+
+  <div ng-repeat="contacts in items | filter: searchText">
+  <br/>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="col-xs-3"><a ng-href="#/items/{{contacts.id}}">{{contacts.firstName}}</a></div>
+        <div class="col-xs-3">{{contacts.lastName}}</div>
+        <div class="col-xs-3">{{contacts.number}}</div>
+        <div class="col-xs-3">{{contacts.address}}</div>
+        <div class="col-xs-1"><button class="btn btn-danger" ng-click= "contactDelete(contact.id)"><i class="fa fa-trash" aria-hidden="true"></i></button></div>
+      </div>
+    </div>
+  </div>
