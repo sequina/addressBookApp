@@ -32,6 +32,7 @@ app.factory("contactStorage", function($q, $http, firebaseURL, authFactory){
   };
 
   var postNewContact = function(newContact){
+    let user = authFactory.getUser();
         return $q(function(resolve, reject) {
             $http.post(
                 firebaseURL + "contacts.json",
@@ -39,7 +40,8 @@ app.factory("contactStorage", function($q, $http, firebaseURL, authFactory){
                     address: newContact.address,
                     firstName: newContact.firstName,
                     lastName: newContact.lastName,
-                    number: newContact.number
+                    number: newContact.number,
+                    uid: user.uid
                 })
             )
             .success(
