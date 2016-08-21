@@ -14,7 +14,7 @@ app.config(function ($routeProvider) {
   $routeProvider.
   when('/',{
     templateUrl:'partials/item-all.html',
-    controller:"ItemAllCtrl",
+    controller:"ItemViewCtrl",
     resolve: {isAuth}
   }).
   when('/items/all',{
@@ -29,7 +29,7 @@ app.config(function ($routeProvider) {
   }).
    when('/items/:contactId', {
     templateUrl: 'partials/item-all.html',
-    controller:"ItemViewCtrl",
+    controller:"ItemAllCtrl",
     resolve: {isAuth}
   }).
   when('/items/:contactId/edit', {
@@ -54,8 +54,8 @@ app.config(function ($routeProvider) {
 });
 
 app.run(($location) => {
-  let todoRef = new Firebase("https://addressproject.firebaseio.com/");
-  todoRef.onAuth(authData => {
+  let contactRef = new Firebase("https://addressproject.firebaseio.com/");
+  contactRef.onAuth(authData => {
     if(!authData){
       $location.path("/login");
     }

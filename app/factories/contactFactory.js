@@ -1,11 +1,11 @@
-app.factory("contactStorage", function($q, $http, firebaseURL, authFactory){
+app.factory("itemStorage", function($q, $http, firebaseURL, authFactory){
 
   var getContactList = function(){
     var contacts = [];
     let user = authFactory.getUser();
     return $q(function(resolve, reject){
       console.log("using link next");
-      $http.get(`${firebaseURL}contacts.json?orderBy="uid"&equalTo= "${user.uid}"`)
+      $http.get(`${firebaseURL}contacts.json?orderBy="uid"&equalTo="${user.uid}"`)
         .success(function(itemObject){
           var itemCollection = itemObject;
           // console.log("itemCollection:", itemCollection);
